@@ -23,7 +23,7 @@ ENV PATH /composer/vendor/bin:/bin:/usr/bin:/sbin:/usr/sbin
 # Install JDK 7 (latest edition)
 RUN add-apt-repository ppa:ondrej/php &&\
     apt-get -q update &&\
-    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends php7.1-cli openjdk-7-jre-headless &&\
+    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends php7.1-cli php7.0-zip php7.0-curl php7.0-gd php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-pgsql php7.0-xml php7.0-readline php7.0-json openjdk-7-jre-headless &&\
     apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin &&\
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
